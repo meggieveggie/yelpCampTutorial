@@ -19,7 +19,7 @@ var commentsRoutes	 = require("./routes/comments"),
 //console.log(process.env.DATABASEURL);
 
 //mongoose.connect(process.env.DATABASEURL);
-mongoose.connect("mongodb+srv://Megan:tammie11@cluster0-gd2ra.mongodb.net/test?retryWrites=true&w=majority", 
+mongoose.connect("mongodb+srv://"+ process.env.MONGO_USERNAME + ":" + process.env.MONGO_PASSWORD + "@" + process.env.MONGO_HOST + "/test?retryWrites=true&w=majority", 
 				{ useNewUrlParser: true,
 				 	useCreateIndex: true
 				 }).then(() => {
