@@ -1,0 +1,18 @@
+version: "3.7"
+services:
+  web:
+    build: .
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_USERNAME: root
+      MONGO_PASSWORD: example
+      MONGO_HOST: mongodb:27017
+    volumes:
+      - .:/usr/src/app/.
+  mongodb:
+    image: mongo:3.4
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+

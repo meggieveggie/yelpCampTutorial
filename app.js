@@ -18,15 +18,20 @@ var commentsRoutes	 = require("./routes/comments"),
 
 //console.log(process.env.DATABASEURL);
 
-//mongoose.connect(process.env.DATABASEURL);
-mongoose.connect("mongodb+srv://"+ process.env.MONGO_USERNAME + ":" + process.env.MONGO_PASSWORD + "@" + process.env.MONGO_HOST + "/test?retryWrites=true&w=majority", 
-				{ useNewUrlParser: true,
-				 	useCreateIndex: true
-				 }).then(() => {
-					console.log("connected to DB");
-					}). catch(err => 
-					  {console.log("error", err.message); 
-					});
+mongoose.connect("mongodb://root:example@mongodb:27017/yelp_camp_v10", {useNewUrlParser: true}).then(() => {
+   					console.log("connected to DB");
+    					}). catch(err => 
+    					  {console.log("error", err.message); 
+   					});
+;
+//mongoose.connect("mongodb+srv://root:example@mongodb:27017/test?retryWrites=true&w=majority", 
+//				{ useNewUrlParser: true,
+//				 	useCreateIndex: true
+//				 }).then(() => {
+//					console.log("connected to DB");
+//					}). catch(err => 
+//					  {console.log("error", err.message); 
+//					});
 
 
 app.set("view engine", "ejs");
